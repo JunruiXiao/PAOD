@@ -14,7 +14,7 @@ The official implementation of the paper Rethinking Prediction Alignment in One-
 | :---: | :------------: | :-----: | :--: | ---- | ---- | ------------------------------------------------------------ | ----- |
 | PAOD  |   ResNeXt101   |   2x    | 48.8 | 67.3 | 53.3 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_x101_64x4d_fpn_mstrain_2x_coco.py) |       |
 | PAOD  | ResNeXt101-DCN |   2x    | 50.4 | 68.9 | 55.0 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_x101_64x4d_fpn_dcn_mstrain_2x_coco.py) |       |
-| PAOD  |  Res2Net-DCN   |   2x    | 51.1 | 69.6 | 55.8 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r2101_fpn_dcn_mstrain_2x_coco.py) |       |
+| PAOD  |  Res2Net-DCN   |   2x    | 51.1 | 69.6 | 55.8 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r2101_fpn_dcn_mstrain_2x_coco.py) |  [Google Drive](https://drive.google.com/file/d/1dOOpMAcboLNhqAS7nUiaSeUvbFSnIz2p/view?usp=sharing)     |
 
 #### Pascal VOC
 
