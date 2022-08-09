@@ -87,4 +87,4 @@ zsh tools/run_crowdhuman.sh
 
 ## Acknowledgement 
 
-We thank [FGD](https://github.com/yzd-v/FGD) and [DDOD](https://github.com/zehuichen123/DDOD) for their code base. 
+We thank [DDOD](https://github.com/zehuichen123/DDOD) for their code base. 
