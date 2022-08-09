@@ -1,12 +1,9 @@
-# Prediction-Guided Distillation 
-
-PyTorch implementation of our ECCV 2022 paper: [Prediction-Guided Distillation for Dense Object Detection](https://arxiv.org/pdf/2203.05469.pdf)
+# Rethinking Prediction Alignment in One-stage Object Detection
 
 ## Requirements
 
 - Our codebase is built on top of [MMDetection](https://github.com/open-mmlab/mmdetection), which can be installed following the offcial instuctions.
 - We used pytorch pre-trained [ResNets](https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py) for training.
-- Please follow the MMdetection offcial instuction to set up COCO dataset. 
 - Please download the [CrowdHuman](https://www.crowdhuman.org/) and set up the dataset by running this [script](https://github.com/ChenhongyiYang/PGD/blob/main/crowd_code/create_crowd_anno.py).
 
 ## Usage
