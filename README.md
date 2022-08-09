@@ -10,27 +10,27 @@ The official implementation of the paper Rethinking Prediction Alignment in One-
 
 #### COCO
 
-| Model |    Backbone    | Lr Schd | mAP  | AP50 | AP75 | Config | Model |
-| :---: | :------------: | :-----: | :--: | ---- | ---- | ------ | ----- |
-| PAOD  |   ResNeXt101   |   2x    | 48.8 | 67.3 | 53.3 |        |       |
-| PAOD  | ResNeXt101-DCN |   2x    | 50.4 | 68.9 | 55.0 |        |       |
-| PAOD  |  Res2Net-DCN   |   2x    | 51.1 | 69.6 | 55.8 |        |       |
+| Model |    Backbone    | Lr Schd | mAP  | AP50 | AP75 | Config                                                       | Model |
+| :---: | :------------: | :-----: | :--: | ---- | ---- | ------------------------------------------------------------ | ----- |
+| PAOD  |   ResNeXt101   |   2x    | 48.8 | 67.3 | 53.3 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_x101_64x4d_fpn_mstrain_2x_coco.py) |       |
+| PAOD  | ResNeXt101-DCN |   2x    | 50.4 | 68.9 | 55.0 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_x101_64x4d_fpn_dcn_mstrain_2x_coco.py) |       |
+| PAOD  |  Res2Net-DCN   |   2x    | 51.1 | 69.6 | 55.8 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r2101_fpn_dcn_mstrain_2x_coco.py) |       |
 
 #### Pascal VOC
 
-| Model | Backbone | Lr Schd | mAP  | AP50 | AP75 | Config | Model |
-| :---: | :------: | :-----: | :--: | ---- | ---- | ------ | ----- |
-| PAOD  | ResNet50 |   1x    | 65.0 | 85.6 | 71.2 |        |       |
+| Model | Backbone | Lr Schd | mAP  | AP50 | AP75 | Config                                                       | Model |
+| :---: | :------: | :-----: | :--: | ---- | ---- | ------------------------------------------------------------ | ----- |
+| PAOD  | ResNet50 |   1x    | 65.0 | 85.6 | 71.2 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r50_fpn_1x_voc.py) |       |
 
 #### CrowdHuman
 
-| Detector | Backbone | AP ↑ | MR ↓ | JI ↑ | Config | Model |
-| :------: | :------: | :--: | :--: | :--: | :----: | ----- |
-|   PAOD   | ResNet50 | 89.2 | 46.5 | 77.7 |        |       |
+| Detector | Backbone | AP ↑ | MR ↓ | JI ↑ |                            Config                            | Model |
+| :------: | :------: | :--: | :--: | :--: | :----------------------------------------------------------: | ----- |
+|   PAOD   | ResNet50 | 89.2 | 46.5 | 77.7 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r50_fpn_1x_crowd.py) |       |
 
 ## Requirements
 
-- Please check [installation](https://github.com/JunruiXiao/PAOD/blob/main/docs/installation.md) for installation and [data_preparation](https://github.com/JunruiXiao/PAOD/blob/main/docs/data_preparation.md) for preparing the dataset.
+- Please check [installation](https://github.com/JunruiXiao/PAOD/blob/main/docs/installation.md) for installation.
 
 ## Training,  Evaluation and Visualization
 
