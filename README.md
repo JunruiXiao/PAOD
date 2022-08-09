@@ -12,21 +12,21 @@ The official implementation of the paper Rethinking Prediction Alignment in One-
 
 | Model |    Backbone    | Lr Schd | mAP  | AP50 | AP75 | Config                                                       | Model |
 | :---: | :------------: | :-----: | :--: | ---- | ---- | ------------------------------------------------------------ | ----- |
-| PAOD  |   ResNeXt101   |   2x    | 48.8 | 67.3 | 53.3 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_x101_64x4d_fpn_mstrain_2x_coco.py) |       |
-| PAOD  | ResNeXt101-DCN |   2x    | 50.4 | 68.9 | 55.0 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_x101_64x4d_fpn_dcn_mstrain_2x_coco.py) |       |
+| PAOD  |   ResNeXt101   |   2x    | 48.8 | 67.3 | 53.3 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_x101_64x4d_fpn_mstrain_2x_coco.py) |    [Google Drive]   |
+| PAOD  | ResNeXt101-DCN |   2x    | 50.4 | 68.9 | 55.0 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_x101_64x4d_fpn_dcn_mstrain_2x_coco.py) |   [Google Drive]    |
 | PAOD  |  Res2Net-DCN   |   2x    | 51.1 | 69.6 | 55.8 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r2101_fpn_dcn_mstrain_2x_coco.py) |  [Google Drive](https://drive.google.com/file/d/1dOOpMAcboLNhqAS7nUiaSeUvbFSnIz2p/view?usp=sharing)     |
 
 #### Pascal VOC
 
 | Model | Backbone | Lr Schd | mAP  | AP50 | AP75 | Config                                                       | Model |
 | :---: | :------: | :-----: | :--: | ---- | ---- | ------------------------------------------------------------ | ----- |
-| PAOD  | ResNet50 |   1x    | 65.0 | 85.6 | 71.2 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r50_fpn_1x_voc.py) |       |
+| PAOD  | ResNet50 |   1x    | 65.0 | 85.6 | 71.2 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r50_fpn_1x_voc.py) |   [Google Drive]    |
 
 #### CrowdHuman
 
 | Detector | Backbone | AP ↑ | MR ↓ | JI ↑ |                            Config                            | Model |
 | :------: | :------: | :--: | :--: | :--: | :----------------------------------------------------------: | ----- |
-|   PAOD   | ResNet50 | 89.2 | 46.5 | 77.7 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r50_fpn_1x_crowd.py) |       |
+|   PAOD   | ResNet50 | 89.2 | 46.5 | 77.7 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r50_fpn_1x_crowd.py) |  [Google Drive]     |
 
 ## Requirements
 
