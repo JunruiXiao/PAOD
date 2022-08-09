@@ -30,7 +30,7 @@ The official implementation of the paper Rethinking Prediction Alignment in One-
 
 ## Requirements
 
-- Please check [installation](https://github.com/JunruiXiao/PAOD/tree/main/blob/main/docs/installation.md) for installation.
+- Please check [installation](https://github.com/JunruiXiao/PAOD/tree/main/blob/installation.md) for installation.
 
 ## Training,  Evaluation and Visualization
 
