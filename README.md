@@ -1,90 +1,64 @@
-# Rethinking Prediction Alignment in One-stage Object Detection
+# PAOD: Rethinking Prediction Alignment in One-stage Object Detection
 
-## Requirements
+The official implementation of the paper Rethinking Prediction Alignment in One-stage Object Detection.
 
-- Our codebase is built on top of [MMDetection](https://github.com/open-mmlab/mmdetection), which can be installed following the offcial instuctions.
-- We used pytorch pre-trained [ResNets](https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py) for training.
-- Please download the [CrowdHuman](https://www.crowdhuman.org/) and set up the dataset by running this [script](https://github.com/ChenhongyiYang/PGD/blob/main/crowd_code/create_crowd_anno.py).
+## News
 
-## Usage
-
-#### Set up datasets and pre-trained models 
-
-```shell
-mkdir data
-ln -s path_to_coco data/coco
-ln -s path_to_crowdhuman data/crowdhuman 
-ln -s path_to_pretrainedModel data/pretrain_models 
-```
-
-#### COCO Experiments 
-
-```shell
-# ------------------------------------
-#    Here we use ATSS as an example
-# ------------------------------------
-
-# Training and testing teacher model
-zsh tools/dist_train.sh work_configs/detectors/atss_r101_3x_ms.py 8
-zsh tools/dist_test.sh work_configs/detectors/atss_r101_3x_ms.py work_dirs/atss_r101_3x_ms/latest.pth 8
-
-# Training and testing student model 
-zsh tools/dist_train.sh work_configs/detectors/atss_r50_1x.py 8
-zsh tools/dist_test.sh work_configs/detectors/atss_r50_1x.py work_dirs/atss_r50_1x/latest.pth 8
-
-# Training and testing PGD model
-zsh tools/dist_train.sh work_configs/pgd_atss_r101_r50_1x.py 8
-zsh tools/dist_test.sh work_configs/pgd_atss_r101_r50_1x.py work_dirs/pgd_atss_r101_r50_1x/latest.pth 8
-```
-
-#### CrowdHuman Experiments
-
-```shell
-# Training teacher, conducting KD, and evalauation
-zsh tools/run_crowdhuman.sh
-```
+- **2022.08.09:** We release the code and models of PAOD.
 
 ## Model Zoo
 
 #### COCO
 
-|  Detector  |             Setting             |     mAP     |                            Config                            |
-| :--------: | :-----------------------------: | :---------: | :----------------------------------------------------------: |
-|    FCOS    | Teacher (r101, 3x, multi-scale) |    43.1     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/fcos_r101_3x_ms.py) |
-|     -      | Student (r50, 1x, single-scale) |    38.2     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/fcos_r50_1x.py) |
-|     -      |   PGD (r50, 1x, single-scale)   | 42.5 (+4.3) | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/pgd_fcos_r101_r50_1x.py) |
-| AutoAssign | Teacher (r101, 3x, multi-scale) |    44.8     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/autoassign_r101_3x_ms.py) |
-|     -      | Student (r50, 1x, single-scale) |    40.6     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/autoassign_r50_1x.py) |
-|     -      |   PGD (r50, 1x, single-scale)   | 43.8 (+3.1) | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/pgd_autoassign_r101_r50_1x.py) |
-|    ATSS    | Teacher (r101, 3x, multi-scale) |    45.5     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/atss_r101_3x_ms.py) |
-|     -      | Student (r50, 1x, single-scale) |    39.6     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/atss_r50_1x.py) |
-|     -      |   PGD (r50, 1x, single-scale)   | 44.2 (+4.6) | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/pgd_atss_r101_r50_1x.py) |
-|    GFL     | Teacher (r101, 3x, multi-scale) |    45.8     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/gfl_r101_3x_ms.py) |
-|     -      | Student (r50, 1x, single-scale) |    40.2     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/gfl_r50_1x.py) |
-|     -      |   PGD (r50, 1x, single-scale)   | 43.8 (+3.6) | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/pgd_gfl_r101_r50_1x.py) |
-|    DDOD    | Teacher (r101, 3x, multi-scale) |    46.6     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/ddod_r101_3x_ms.py) |
-|     -      | Student (r50, 1x, single-scale) |    42.0     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/detectors/ddod_r50_1x.py) |
-|     -      |   PGD (r50, 1x, single-scale)   | 45.4 (+3.4) | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/pgd_ddod_r101_r50_1x.py) |
+| Model |    Backbone    | Lr Schd | mAP  | AP50 | AP75 | Config | Model |
+| :---: | :------------: | :-----: | :--: | ---- | ---- | ------ | ----- |
+| PAOD  |   ResNeXt101   |   2x    | 48.8 | 67.3 | 53.3 |        |       |
+| PAOD  | ResNeXt101-DCN |   2x    | 50.4 | 68.9 | 55.0 |        |       |
+| PAOD  |  Res2Net-DCN   |   2x    | 51.1 | 69.6 | 55.8 |        |       |
+
+#### Pascal VOC
+
+| Model | Backbone | Lr Schd | mAP  | AP50 | AP75 | Config | Model |
+| :---: | :------: | :-----: | :--: | ---- | ---- | ------ | ----- |
+| PAOD  | ResNet50 |   1x    | 65.0 | 85.6 | 71.2 |        |       |
 
 #### CrowdHuman
 
-| Detector |                Setting                |    MR ↓     |    AP ↑     |    JI ↑     |                            Config                            |
-| :------: | :-----------------------------------: | :---------: | :---------: | :---------: | :----------------------------------------------------------: |
-|   DDOD   | Teacher (r101, 36 epoch, multi-scale) |    41.4     |    90.2     |    81.4     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/det_crowdhuman/ddod_r101.py) |
-|    -     | Student (r50, 12 epoch, single-scale) |    46.0     |    88.0     |    79.0     | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/det_crowdhuman/ddod_r50.py) |
-|    -     |   PGD (r50, 12 epoch, single-scale)   | 42.8 (-3.2) | 90.0 (+2.0) | 80.7 (+1.7) | [config](https://github.com/ChenhongyiYang/PGD/blob/main/work_configs/pgd_ddod_crowdhuman_r101_r50.py) |
+| Detector | Backbone | AP ↑ | MR ↓ | JI ↑ | Config | Model |
+| :------: | :------: | :--: | :--: | :--: | :----: | ----- |
+|   PAOD   | ResNet50 | 89.2 | 46.5 | 77.7 |        |       |
 
-## Ciation
+## Requirements
 
+- Please check [installation](https://github.com/JunruiXiao/PAOD/blob/main/docs/installation.md) for installation and [data_preparation](https://github.com/JunruiXiao/PAOD/blob/main/docs/data_preparation.md) for preparing the dataset.
+
+## Training,  Evaluation and Visualization
+
+To train PAOD with 8 GPUs, run:
+```bash
+bash tools/dist_train.sh $CONFIG 8
 ```
-@article{yang2022predictionguided,
-  title={{Prediction-Guided Distillation for Dense Object Detection}},
-  author={Yang, Chenhongyi and Ochal, Mateusz and Storkey, Amos and Crowley, Elliot J},
-  journal={arXiv preprint arXiv:2203.05469},
-  year={2022}
-}
+
+or you can run the .sh file in script:
+
+```bash
+bash train_on_coco.sh
+bash train_on_voc.sh
+bash train_on_crow.sh
+```
+
+To evaluate PAOD with 8 GPU, run:
+
+```bash
+bash tools/dist_test.sh $YOUR_CONFIG $YOUR_CKPT 8 --eval=bbox
+```
+
+To visualize the predictions, run:
+```bash
+python tools/test.py $YOUR_CONFIG $YOUR_CKPT --eval=bbox --show
 ```
 
 ## Acknowledgement 
 
-We thank [DDOD](https://github.com/zehuichen123/DDOD) for their code base. 
+This project is mainly based on the following open-sourced projects: [open-mmlab](https://github.com/open-mmlab), and we thank [DDOD](https://github.com/zehuichen123/DDOD) for their code on CrowdHuman.
+

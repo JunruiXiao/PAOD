@@ -1,0 +1,10 @@
+score_thr:0.0, mean_ratio:0.1821, valids:93177, total:543325, gtn:98863
+score_thr:0.1, mean_ratio:0.6469, valids:83906, total:125357, gtn:98459
+score_thr:0.2, mean_ratio:0.7322, valids:75219, total:86643, gtn:97868
+score_thr:0.3, mean_ratio:0.7027, valids:64410, total:67761, gtn:97058
+score_thr:0.4, mean_ratio:0.6015, valids:49921, total:50906, gtn:96234
+score_thr:0.5, mean_ratio:0.4379, valids:32969, total:33247, gtn:95511
+score_thr:0.6, mean_ratio:0.2404, valids:16508, total:16557, gtn:95063
+score_thr:0.7, mean_ratio:0.0732, valids:4778, total:4785, gtn:94852
+score_thr:0.8, mean_ratio:0.0037, valids:230, total:230, gtn:94801
+score_thr:0.9, mean_ratio:0.0000, valids:0, total:0, gtn:94798
