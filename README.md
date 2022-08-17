@@ -24,9 +24,9 @@ The official implementation of the paper Rethinking Prediction Alignment in One-
 
 #### CrowdHuman
 
-| Detector | Backbone | AP ↑ | MR ↓ | JI ↑ |                            Config                            | Model |
-| :------: | :------: | :--: | :--: | :--: | :----------------------------------------------------------: | ----- |
-|   PAOD   | ResNet50 | 89.2 | 46.5 | 77.7 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r50_fpn_1x_crowd.py) |  [Google Drive](https://drive.google.com/file/d/1K5O1iOXkVfl6zdFHkKbiND-tI8MEPBOv/view?usp=sharing)     |
+| Detector | Backbone | Lr Schd | AP ↑ | MR ↓ | JI ↑ |                            Config                            | Model |
+| :------: | :------: | :-----: | :--: | :--: | :--: | :----------------------------------------------------------: | ----- |
+|   PAOD   | ResNet50 |    1x   | 89.2 | 46.5 | 77.7 | [Config](https://github.com/JunruiXiao/PAOD/tree/main/configs/paod/paod_r50_fpn_1x_crowd.py) |  [Google Drive](https://drive.google.com/file/d/1K5O1iOXkVfl6zdFHkKbiND-tI8MEPBOv/view?usp=sharing)     |
 
 ## Requirements
 
