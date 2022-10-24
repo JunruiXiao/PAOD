@@ -1,6 +1,6 @@
 # PAOD: Rethinking Prediction Alignment in One-stage Object Detection
 
-The official implementation of the paper Rethinking Prediction Alignment in One-stage Object Detection.
+The official implementation of the paper [Rethinking Prediction Alignment in One-stage Object Detection](https://doi.org/10.1016/j.neucom.2022.09.132).
 
 ## News
 
@@ -56,6 +56,19 @@ bash tools/dist_test.sh $YOUR_CONFIG $YOUR_CKPT 8 --eval=bbox
 To visualize the predictions, run:
 ```bash
 python tools/test.py $YOUR_CONFIG $YOUR_CKPT --eval=bbox --show
+```
+
+## Citation
+
+We appreciate it if you would please cite the following paper if you found the implementation useful for your work:
+
+```bash
+@article{Xiao2022RethinkingPA,
+  title={Rethinking Prediction Alignment in One-stage Object Detection},
+  author={Junrui Xiao and He Jiang and Zhikai Li and Qingyi Gu},
+  journal={Neurocomputing},
+  year={2022}
+}
 ```
 
 ## Acknowledgement 
